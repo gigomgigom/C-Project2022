@@ -1,0 +1,19 @@
+create table usinf(user_id number primary key, user_nm varchar(20), user_tel varchar(20), user_pw varchar(20), user_overdue integer);
+/
+create table book(bo_code varchar(20) primary key, bo_nm varchar(40), bo_auth varchar(20), bo_cp varchar(20), bo_date varchar(20), lent_id number, lent_date date, rtn_date date foreign key(lent_id) references usinf(user_id);
+/
+create table ADM(ADM_NM varchar(30), ADM_PWD varchar(30));
+/
+create table ORD(ORD_NO number primary key, ORD_NM varchar(30), ORD_CNT number);
+/
+insert into usinf values(1, '심영조', '010-2810-4870', '1234', '0');
+/
+insert into usinf values(2, '허성문', '010-7661-5586', '4567', '0');
+/
+insert into usinf values(3, '류주혁', '010-3842-9039', '7890', '0');
+/
+insert into book values('978-89-7050-901-3', 'c# 프로그래밍 입문', '오세만', '생능출판사', '2022-02');
+/
+insert into book values('978-89-314-4013-3', 'c# and Database 완벽 가이드', '원철연', '영진출판사', '2021-11');
+/
+insert into ADM values('admin', '1234');
